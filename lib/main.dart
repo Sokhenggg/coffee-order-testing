@@ -1,7 +1,14 @@
 import 'package:coffee_card/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.brown[700],
+      systemNavigationBarColor: Colors.brown[700],
+    )
+  );
   runApp(const MaterialApp(
     home: Home()
   ));

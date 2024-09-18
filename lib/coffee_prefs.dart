@@ -10,20 +10,17 @@ class CoffeePrefs extends StatefulWidget {
 }
 
 class _CoffeePrefsState extends State<CoffeePrefs> {
-
-
   int strength = 1;
   int sugars = 1;
 
-
   void increaseStrength() {
-    setState((){
+    setState(() {
       strength = strength < 5 ? strength + 1 : 1;
     });
   }
 
   void incraseSugars() {
-    setState((){
+    setState(() {
       sugars = sugars < 5 ? sugars + 1 : 0;
     });
   }
@@ -32,43 +29,29 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Row(
-          children:[
-
-            const StyledBodyText('Strength: '),
-            for(int i=0; i<strength; i++)
-              Image.asset('assets/img/coffee_bean.png',
-                width: 25,
-                color: Colors.brown[100],
-                colorBlendMode:BlendMode.multiply,
-              ),
-            const Expanded (child: SizedBox(width: 100)),
-            StyledButton(
-              onPressed: increaseStrength,
-              child: const Text('+')
+        Row(children: [
+          const StyledBodyText('Strength: '),
+          for (int i = 0; i < strength; i++)
+            Image.asset(
+              'assets/img/coffee_bean.png',
+              width: 25,
+              color: Colors.brown[100],
+              colorBlendMode: BlendMode.multiply,
             ),
-          ]
-        ), 
-        Row(
-          children:[
-            const StyledBodyText('Sugars: '),
-
-          if (sugars == 0)
-              const StyledBodyText('No Sugar'),
-
-            for(int i=0; i<sugars; i++)
-              Image.asset('assets/img/sugar_cube.png',
+          const Expanded(child: SizedBox(width: 100)),
+          StyledButton(onPressed: increaseStrength, child: const Text('+')),
+        ]),
+        Row(children: [
+          const StyledBodyText('Sugars: '),
+          if (sugars == 0) const StyledBodyText('No Sugar'),
+          for (int i = 0; i < sugars; i++)
+            Image.asset('assets/img/sugar_cube.png',
                 width: 25,
                 color: Colors.brown[100],
-                colorBlendMode: BlendMode.multiply
-              ),
-            const Expanded (child: SizedBox(width:100)),
-            StyledButton(
-              onPressed: incraseSugars,
-              child: const Text('+')
-            )
-          ]
-        ), 
+                colorBlendMode: BlendMode.multiply),
+          const Expanded(child: SizedBox(width: 100)),
+          StyledButton(onPressed: incraseSugars, child: const Text('+'))
+        ]),
       ],
     );
   }

@@ -3,15 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarColor: Colors.brown[700],
-      systemNavigationBarColor: Colors.brown[700],
-    )
-  );
-  runApp(const MaterialApp(
-    home: Home()
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.brown[700],
+    systemNavigationBarColor: Colors.brown[700],
   ));
+  runApp(const MaterialApp(home: Home()));
 }
 
 class Sandbox extends StatelessWidget {
@@ -27,26 +23,20 @@ class Sandbox extends StatelessWidget {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
-        children:[
+        children: [
           Container(
             height: 100,
             color: Colors.red,
             child: const Text('one'),
-              
           ),
           Container(
             height: 200,
             color: Colors.green,
             child: const Text('two'),
           ),
-          Container(
-            height: 300,
-            color: Colors.blue,
-            child: const Text('three')
-          )
-        ]
-      )
+          Container(height: 300, color: Colors.blue, child: const Text('three'))
+        ],
+      ),
     );
   }
 }
- 

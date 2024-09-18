@@ -8,35 +8,31 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Coffee Order', style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold
-          )),
-          backgroundColor: Colors.brown[700],
-          centerTitle: true,
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
+      appBar: AppBar(
+        title: const Text('Coffee Order',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.brown[700],
+        centerTitle: true,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
               color: Colors.brown[200],
               padding: const EdgeInsets.all(20),
-              child: const StyledBodyText('How I Like my Coffee')
-            ),
-            Container(
+              child: const StyledBodyText('How I Like my Coffee')),
+          Container(
               color: Colors.brown[100],
               padding: const EdgeInsets.all(20),
-              child: const CoffeePrefs()
-            ),
-            Expanded(
-              child: Image.asset('assets/img/coffee_bg.jpg',
-                fit: BoxFit.fitWidth,
-                alignment: Alignment.bottomCenter,
-              )
-            ),
-          ],
-        )
-    ) ; 
+              child: const CoffeePrefs()),
+          Expanded(
+              child: Image.asset(
+            'assets/img/coffee_bg.jpg',
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.bottomCenter,
+          )),
+        ],
+      ),
+    );
   }
 }
